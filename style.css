@@ -1,144 +1,111 @@
-/* Apply styles to the nav-bar class */
-.nav-bar {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-  }
-  
-  /* Apply styles to the content class */
-  .content {
+body {
+    font-family: 'Comic Sans MS', cursive;
     margin: 20px;
-  }
-  
-  /* Apply styles to the footer class */
-  .footer {
-    background-color: #333;
-    color: #fff;
+    padding: 0;
+    background-color: #f5e0b3;
+    color: #4CAF50;
+}
+
+header {
     text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
+    margin-bottom: 20px;
+    color: #8B4513;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.crazy-iframe,
+.styled-div {
     width: 100%;
-  }
-  
-  /* Descendant selector: Apply styles to 'a' elements within the nav-bar class */
-  .nav-bar a {
-    color: #fff;
+    max-width: 800px;
+    margin: 0 auto;
+    display: block;
+}
+
+.styled-div {
+    height: 200px;
+    background-color: #D2691E;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid #A52A2A;
+    border-radius: 12px;
+    visibility: visible;
+    opacity: 1;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.highlighted-text {
+    color: #FF4500;
+    font-weight: bold;
+}
+
+hr {
+    margin: 40px 0;
+    border: 0;
+    border-top: 2px dashed #8B4513;
+}
+
+/* Combinator styles */
+
+/* Descendant Selector */
+.nav-bar ul li a {
+    color: #8B4513;
     text-decoration: none;
-  }
-  
-  /* Child selector: Apply styles to 'li' elements that are direct children of the ul within the nav-bar class */
-  .nav-bar > ul > li {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  /* Adjacent sibling selector: Apply styles to the content class that directly follows the nav-bar class */
-  .nav-bar + .content {
-    border-top: 1px solid #333;
-  }
-  
-  /* Descendant selector: Apply styles to 'p' elements within the content class */
-  .content p {
-    font-size: 16px;
-  }
-  
-  /* Descendant selector: Apply styles to 'p' elements within the footer class */
-  .footer p {
-    margin: 0;
-  }
-  
-  /* Additional styles for better visibility */
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-  }
-  
-  /* Style the links within the footer */
-  .footer a {
-    color: #fff;
-    text-decoration: underline;
-  }
-  
+}
+
+/* Child Selector */
+.content > h2 {
+    color: #228B22;
+}
+
+/* Adjacent Sibling Selector */
+.content + section > h2 {
+    color: #FF0000;
+}
 
 /* Pseudo-classes */
-/* Apply styles to the first 'li' element within the nav-bar class */
 .nav-bar li:first-child {
     font-weight: bold;
-  }
-  
-  /* Apply styles to the last 'li' element within the nav-bar class */
-  .nav-bar li:last-child {
-    margin-right: 0;
-  }
-  
-  /* Apply styles to 'a' elements within the nav-bar class when hovered */
-  .nav-bar a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Apply styles to 'p' elements within the content class when the parent is hovered */
-  .content:hover p {
-    color: #ff4500; /* Change text color to orange on hover */
-  }
-  
-  /* Pseudo-elements */
-  /* Add a double border above and below the content class */
-  .content::before,
-  .content::after {
-    content: "";
-    display: block;
-    height: 2px;
-    background-color: #333;
-    margin: 10px 0;
-  }
-  
-  /* Style the first line of the content class */
-  .content::first-line {
-    font-weight: bold;
-  }
-  
-  /* Style the first letter of each paragraph within the content class */
-  .content p::first-letter {
-    font-size: 24px;
-    color: #ff4500; /* Change the color of the first letter */
-  }
-  
-  /* Style the content within the footer class using the before pseudo-element */
-  .footer::before {
-    content: "Website Footer";
-    display: block;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #fff;
-  }
-  
-  /* Additional styles... */
-  
-/* Visibility property */
-/* Hide the content class by default */
-.content {
-    visibility: hidden;
-  }
-  
-  /* Show the content class when the parent (body) is hovered */
-  body:hover .content {
-    visibility: visible;
-  }
-  
-  /* Opacity property */
-  /* Apply a low opacity to the footer class */
-  .footer {
+}
+
+.content p:last-child {
+    font-style: italic;
+}
+
+.styled-div:hover {
+    background-color: #f7ca18;
     opacity: 0.8;
-  }
-  
-  /* Display property */
-  /* Hide the footer class on screens smaller than 600px */
-  @media (max-width: 600px) {
-    .footer {
-      display: none;
-    }
-  }
-  
-  /* Additional styles... */
-  
+}
+
+/* Target the second section */
+.content:nth-child(2) {
+    background-color: #ecf0f1;
+}
+
+/* Pseudo-elements */
+.content::before {
+    content: ">>";
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.content::after {
+    content: "<<";
+    color: #3498db;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.styled-div p::first-line {
+    font-size: 18px;
+    color: #e74c3c;
+}
+
+.content p::first-letter {
+    font-size: 24px;
+    color: #27ae60;
+}
